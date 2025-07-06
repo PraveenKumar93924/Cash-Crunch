@@ -1,0 +1,69 @@
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; 
+import { Button } from "@nextui-org/react";
+import { Converter } from "../components";
+import home from "../assets/home.webp";
+
+const Convertor = () => {
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    setUsername(storedUsername);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2.0 }}
+        className="w-full h-full md:h-[90vh] flex flex-col md:flex-row items-center justify-center md:space-x-24 pb-8 md:pb-0"
+      >
+        <section className="sm:min-w-[40%] h-[90vh] md:h-full flex flex-col justify-center items-center">
+          <motion.h2
+            className="text-5xl text-center font-semibold"
+            initial={{ opacity: 0, y: -50 }}  
+            animate={{ opacity: 1, y: 0 }}  
+            transition={{ duration: 1.0, ease: "easeOut" }}  
+          >
+            Welcome, {username}!
+          </motion.h2>
+          <img src={home} alt="Currency convert Image" />
+          <p className="text-center text-base sm:text-lg lg:text-xl">
+            Effortlessly convert currencies with our intuitive tool. Instant rates
+            for over 30+ currencies. Simplify your transactions today!
+          </p>
+          <a href="#convertor">
+            <Button
+              color="primary"
+              endContent={
+                <box-icon
+                  name="chevrons-down"
+                  animation="fade-down"
+                  color="#fff"
+                />
+              }
+              className="md:hidden hover:underline text-lg mt-8"
+            >
+              Scroll Down to Continue
+            </Button>
+          </a>
+        </section>
+
+        <section
+          className="flex flex-col items-center justify-center h-[90vh] md:h-full min-w-[100%] sm:min-w-[70%] md:min-w-[40%]"
+          id="convertor"
+        >
+          <h1 className="text-4xl text-center lg:text-5xl xl:text-6xl text-primary">
+            Check live rates
+          </h1>
+          <Converter />
+        </section>
+      </motion.main>
+    </AnimatePresence>
+  );
+};
+
+export default Convertor;
