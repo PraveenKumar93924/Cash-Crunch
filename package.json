@@ -1,12 +1,12 @@
 {
-  "name": "convertio",
+  "name": "cash-crunch",
   "private": true,
   "version": "1.0.0",
-  "license": "MIT",
-  "author": "Shourya Saxena",
-  "description": "Convertio is a real-time currency converter tool that makes it easy to convert money from one currency to another.",
+  "license": "MRU",
+  "author": "Praveen Kumar",
+  "description": "Cash-Crunch is a real-time currency converter tool that makes it easy to convert money from one currency to another.",
   "keywords": [
-    "convertio",
+    "cash-crunch",
     "currency converte",
     "real-time",
     "exchange rates",
