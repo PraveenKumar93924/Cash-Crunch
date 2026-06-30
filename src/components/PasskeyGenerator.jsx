@@ -31,7 +31,7 @@ const PasskeyGenerator = () => {
       textAlign: 'center',
       padding: '20px',
       fontFamily: 'Poppins, sans-serif',
-      position: 'relative', // Ensure profile button doesn't overlap with content
+      position: 'relative', 
     }}>
       {/* Profile Button */}
       <button 

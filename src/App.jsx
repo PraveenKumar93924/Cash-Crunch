@@ -1,18 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { NavBar } from "./components";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PasskeyGenerator from "./components/PasskeyGenerator";
 import Payments from "./components/Payments";
-import Profile from "./pages/Profile"; 
+import Profile from "./pages/Profile";
 import OnlinePayment from "./components/OnlinePayment";
 import TransactionsPage from './pages/TransactionsPage';
-
 
 const App = () => {
   return (
@@ -39,9 +38,6 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/online-payment" element={<OnlinePayment />} />
             <Route path="/transactions" element={<TransactionsPage />} />
-
-            
-
           </Routes>
         </AnimatePresence>
       </div>
